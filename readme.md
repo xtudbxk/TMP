@@ -1,9 +1,6 @@
-### [TMP: Temporal Motion Propagation for Online Video Super-Resolution](https://arxiv.org/abs/2312.09909)
+## [TMP: Temporal Motion Propagation for Online Video Super-Resolution](https://arxiv.org/abs/2312.09909)
 
----
-
-<a href='https://arxiv.org/abs/2312.09909'><img src='https://img.shields.io/badge/arXiv-2312.09909
--b31b1b.svg'></a>
+<a href='https://arxiv.org/abs/2312.09909'><img src='https://img.shields.io/badge/arXiv-2312.09909-b31b1b.svg'></a>
 
 [Zhengqiang Zhang](https://scholar.google.com.hk/citations?hl=zh-CN&user=UX26wSMAAAAJ)<sup>1,2</sup> | [Ruihuang Li](https://scholar.google.com.hk/citations?user=8CfyOtQAAAAJ&hl=zh-CN&oi=ao) <sup>1,2</sup> | [Shi Guo](https://scholar.google.com.hk/citations?hl=zh-CN&user=5hsEmuQAAAAJ)<sup>1,2</sup> | [Yang Cao](https://scholar.google.com.hk/citations?hl=zh-CN&user=VuKS1VQAAAAJ)<sup>3</sup> | [Lei Zhang](https://scholar.google.com.hk/citations?hl=zh-CN&user=tAK5l1IAAAAJ)<sup>1,2</sup>
 
@@ -14,26 +11,19 @@
 
 Online video super-resolution (online-VSR) highly relies on an effective alignment module to aggregate temporal information, while the strict latency requirement makes accurate and efficient alignment very challenging. Though much progress has been achieved, most of the existing online-VSR methods estimate the motion fields of each frame separately to perform alignment, which is computationally redundant and ignores the fact that the motion fields of adjacent frames are correlated. In this work, we propose an efficient **Temporal Motion Propagation (TMP)** method, which leverages the continuity of motion field to achieve fast pixel-level alignment among consecutive frames. Specifically, we first propagate the offsets from previous frames to the current frame, and then refine them in the neighborhood, which significantly reduces the matching space and speeds up the offset estimation process. Furthermore, to enhance the robustness of alignment, we perform spatial-wise weighting on the warped features, where the positions with more precise offsets are assigned higher importance. Experiments on benchmark datasets demonstrate that the proposed TMP method achieves **leading online-VSR accuracy** as well as **inference speed**. The source code of TMP can be found at [this https URL](https://github.com/xtudbxk/TMP).
 
+
 ## FRAMEWORK
 - ##### the illustration of propagation paths for moving objects and static regions
 
+<img style="width:47%" src="https://raw.githubusercontent.com/xtudbxk/TMP/main/figures/obj.PNG" /> <img style="width:47%" src="https://raw.githubusercontent.com/xtudbxk/TMP/main/figures/cam.PNG" />
 
-<img style="width:47%" src="figures/obj.png" /> <img style="width:47%" src="figures/cam.png" />
-The *OBJ path* aims to locate moving objects in the current frame, while the *CAM path* matches the static regions. The <font color=orange>orange</font> arrow represents the estimated motion from I<sup>LR</sup><sub style="margin-left:-1.2%">t−2</sub> to I<sup>LR</sup><sub style="margin-left:-1.2%">t−1</sub>, which starts from the <font color=blue>blue</font> point and ends at the <font color=orange>orange</font> point. The <font color=red>red</font> arrow indicates the temporally propagated motion. In the CAM path, the <font color=green>green</font> point in I<sup>LR</sup><sub  style="margin-left:-1.2%">t&nbsp;&nbsp;</sub> has the same position as the <font color=orange>orange</font> point in I<sup>LR</sup><sub  style="margin-left:-1.2%">t−1</sub>. The <font color=red>red</font> points indicates the potential positions of the object at the corresponding frames, and the brighter colors represent higher likelihood.
-
----
+The *OBJ path* aims to locate moving objects in the current frame, while the *CAM path* matches the static regions. The $\text{\color{orange}{orange}}$ arrow represents the estimated motion from I<sup>LR</sup><sub style="margin-left:-1.2%">t−2</sub> to I<sup>LR</sup><sub style="margin-left:-1.2%">t−1</sub>, which starts from the $\text{\color{blue}{blue}}$ point and ends at the $\text{\color{orange}{orange}}$ point. The $\text{\color{red}{red}}$ arrow indicates the temporally propagated motion. In the CAM path, the $\text{\color{green}{green}}$ point in I<sup>LR</sup><sub  style="margin-left:-1.2%">t&nbsp;&nbsp;</sub> has the same position as the $\text{\color{orange}{orange}}$ point in I<sup>LR</sup><sub  style="margin-left:-1.2%">t−1</sub>. The $\text{\color{red}{red}}$ points indicates the potential positions of the object at the corresponding frames, and the brighter colors represent higher likelihood.
 
 - ##### the architecture of the proposed online-VSR method
 
 ![](figures/framework.png)
-Overview of our proposed online-VSR method. Left: The flowchart of the proposed method. There are two major differences between our method and the existing methods. One is the temporal motion propagation (TMP) module (highlighted in <font color=green>green</font> color box), which propagates the motion field from the previous frame to the current frame. The other is the motion confidence weighted fusion (highlighted in <font color=orange>orange</font> color box), which weighs the warped features by the accuracy of estimated offsets. Right: The detailed architecture of the TMP module. Best viewed in color.
 
-<div style="display:none">
-- ##### the TMP algorithm
-
-<img style="width:40%;" src="figures/tmp_algorithm.png" />
-*please refer to the [paper](https://arxiv.org/abs/2312.09909) for the details of each equations. *
-</div>
+Overview of our proposed online-VSR method. Left: The flowchart of the proposed method. There are two major differences between our method and the existing methods. One is the temporal motion propagation (TMP) module (highlighted in $\text{\color{green}{green}}$ color box), which propagates the motion field from the previous frame to the current frame. The other is the motion confidence weighted fusion (highlighted in $\text{\color{orange}{orange}}$ color box), which weighs the warped features by the accuracy of estimated offsets. Right: The detailed architecture of the TMP module. Best viewed in color.
 
 ## HOW TO USE
 
@@ -59,13 +49,16 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
 *please refer to the [paper](https://arxiv.org/abs/2312.09909) for more results.*
    
 - ##### Compared with non- and online-VSR methods
-![](figures/table.png)
+
+![](figures/table.PNG)
 
 - ##### Visualized Results on Static Regions and Moving Objects
-![](figures/fig4.png)
+
+![](figures/fig4.PNG)
 
 - ##### Visualized Results on REDS4
-![](figures/reds4.png)
+
+![](figures/reds4.PNG)
 
 
 
@@ -82,7 +75,7 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
 }
 ```
 
-### CONTACT
+## CONTACT
 
 Please leave a issue or contact zhengqiang with [zhengqiang.zhang@connect.polyu.hk](mailto:zhengqiang.zhang@connect.polyu.hk)
 
@@ -91,4 +84,7 @@ Great thanks to [BasicSR](https://github.com/XPixelGroup/BasicSR). We build our 
 
 This project is released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html).
 
-please refer to [BasicSR's LICENCE.md](LICENCE/README.md) for more details of licence about the code in BasicSR.
+Please refer to [BasicSR's LICENCE.md](LICENCE/README.md) for more details of licence about the code in BasicSR.
+
+
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=xtudbxk.TMP)
