@@ -40,7 +40,7 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
   You can test the trained models using `python3 basicsr/train.py -opt options/test/TMP/test_TMP.yaml`.
   
 - ##### Pretrained Models
-  Please download the pretrained models from [OneDrive](https://connectpolyu-my.sharepoint.com/:u:/g/personal/22040257r_connect_polyu_hk/Eabm8iorllFBpZm7JU4DED0BFgDUqcA8IUBJ_nYfh62G2A?e=7JnYap)).
+  Please download the pretrained models from [OneDrive](https://connectpolyu-my.sharepoint.com/:u:/g/personal/22040257r_connect_polyu_hk/Eabm8iorllFBpZm7JU4DED0BFgDUqcA8IUBJ_nYfh62G2A?e=7JnYap).
 
 *please modify the paths of dataset and the trained model in the corresponding config file mannually*
 
