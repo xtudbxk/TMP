@@ -49,15 +49,15 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
    
 - ##### Compared with non- and online-VSR methods
 
-![](figures/table.PNG)
+![](figures/table.jpg)
 
 - ##### Visualized Results on Static Regions and Moving Objects
 
-![](figures/fig4.PNG)
+![](figures/fig4.jpg)
 
 - ##### Visualized Results on REDS4
 
-![](figures/reds4.PNG)
+![](figures/reds4.jpg)
 
 
 
