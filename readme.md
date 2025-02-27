@@ -1,6 +1,6 @@
-## [TMP: Temporal Motion Propagation for Online Video Super-Resolution](https://arxiv.org/abs/2312.09909)
+## TMP: Temporal Motion Propagation for Online Video Super-Resolution
 
-<a href='https://arxiv.org/abs/2312.09909'><img src='https://img.shields.io/badge/arXiv-2312.09909-b31b1b.svg'></a>
+[TIP version](https://doi.org/10.1109/TIP.2024.3453048) [arxiv version](https://arxiv.org/abs/2312.09909)
 
 [Zhengqiang Zhang](https://scholar.google.com.hk/citations?hl=zh-CN&user=UX26wSMAAAAJ)<sup>1,2</sup> | [Ruihuang Li](https://scholar.google.com.hk/citations?user=8CfyOtQAAAAJ&hl=zh-CN&oi=ao) <sup>1,2</sup> | [Shi Guo](https://scholar.google.com.hk/citations?hl=zh-CN&user=5hsEmuQAAAAJ)<sup>1,2</sup> | [Yang Cao](https://scholar.google.com.hk/citations?hl=zh-CN&user=VuKS1VQAAAAJ)<sup>3</sup> | [Lei Zhang](https://scholar.google.com.hk/citations?hl=zh-CN&user=tAK5l1IAAAAJ)<sup>1,2</sup>
 
@@ -36,7 +36,7 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
   You can train this project using `python3 basicsr/train.py -opt options/train/TMP/train_TMP.yaml`.
   
 - ##### Test
-  You can test the trained models using `python3 basicsr/train.py -opt options/test/TMP/test_TMP.yaml`.
+  You can test the trained models using `python3 basicsr/test.py -opt options/test/TMP/test_TMP.yaml`.
   
 - ##### Pretrained Models
   Please download the pretrained models from [OneDrive](https://connectpolyu-my.sharepoint.com/:u:/g/personal/22040257r_connect_polyu_hk/Eabm8iorllFBpZm7JU4DED0BFgDUqcA8IUBJ_nYfh62G2A?e=7JnYap).
@@ -64,14 +64,16 @@ Overview of our proposed online-VSR method. Left: The flowchart of the proposed 
 ## CITATION
 
 ```
-@misc{zhang2023tmp,
-    title={TMP: Temporal Motion Propagation for Online Video Super-Resolution},
-    author={Zhengqiang Zhang and Ruihuang Li and Shi Guo and Yang Cao and Lei Zhang},
-    year={2023},
-    eprint={2312.09909},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
-}
+@ARTICLE{10670061,
+  author={Zhang, Zhengqiang and Li, Ruihuang and Guo, Shi and Cao, Yang and Zhang, Lei},
+  journal={IEEE Transactions on Image Processing}, 
+  title={TMP: Temporal Motion Propagation for Online Video Super-Resolution}, 
+  year={2024},
+  volume={33},
+  number={},
+  pages={5014-5028},
+  keywords={Accuracy;Superresolution;Optical flow;Feature extraction;Streaming media;Image reconstruction;Estimation;Video super-resolution;motion compensation;deep neural networks},
+  doi={10.1109/TIP.2024.3453048}}
 ```
 
 ## CONTACT
