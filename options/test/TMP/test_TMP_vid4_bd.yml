@@ -1,0 +1,38 @@
+# TMP BD weights on Vid4-BD (paper Table I: 27.61 / 0.8428, Y channel)
+# LQ data: generate with scripts/data_preparation/generate_LR_BDx4.py
+name: TMPBD_vid4_bd
+model_type: VideoRecurrentModel
+scale: 4
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test:
+    name: Vid4
+    type: VideoRecurrentTestDataset
+    dataroot_gt: /tmp/datasets/Vid4/GT
+    dataroot_lq: /tmp/datasets/Vid4/BDx4_repro
+    io_backend:
+      type: disk
+    cache_data: true
+    num_frame: -1
+
+network_g:
+  type: TMPBD
+
+path:
+  pretrain_network_g: models/TMP_BD_Vimeo90k_Vid4.pth
+  strict_load_g: true
+  param_key_g: params_ema
+
+val:
+  save_img: false
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: true
